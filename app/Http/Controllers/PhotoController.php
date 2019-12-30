@@ -61,7 +61,6 @@ class PhotoController extends Controller
         // S3にファイルを保存する
         // 第三引数の'public'はファイルを公開状態で保存するため
         $request->photo->storeAs('', $photo->filename);
-        //Storage::disk('public')->put($photo->filename, $request->photo);
 
         // データベースエラー時にファイル削除を行うため
         // トランザクションを利用する

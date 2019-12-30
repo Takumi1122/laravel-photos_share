@@ -21718,17 +21718,17 @@ function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('auth/currentUser');
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch("auth/currentUser");
 
           case 2:
             new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
-              el: '#app',
+              el: "#app",
               router: _router__WEBPACK_IMPORTED_MODULE_3__["default"],
               store: _store__WEBPACK_IMPORTED_MODULE_4__["default"],
               components: {
                 App: _App_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
               },
-              template: '<App />'
+              template: "<App />"
             });
 
           case 3:
