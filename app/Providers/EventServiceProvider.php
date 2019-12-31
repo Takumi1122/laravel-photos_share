@@ -18,6 +18,11 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        //アクセスを検出するイベント
+        'App\Events\AccessDetectionEvent' => [
+            // アクセスIP記録リスナー
+            'App\Listeners\AccessIpRecordListener',
+        ],
     ];
 
     /**

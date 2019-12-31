@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Events\AccessDetectionEvent;
 
 class PhotoController extends Controller
 {
@@ -22,8 +23,10 @@ class PhotoController extends Controller
     /**
      * 写真一覧
      */
-    public function index()
+    public function index(Request $request)
     {
+        event(new AccessDetectionEvent($request->ip()));
+
         $photos = Photo::with(['owner', 'likes'])
             ->orderBy(Photo::CREATED_AT, 'desc')->paginate();
 
